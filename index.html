@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+	<title>Seatwork2</title>
+
+	<!--css-->
+	<style>
+		.container{
+			padding: 40px;
+		}
+
+		body{
+			background-color: lightpink;
+		}
+
+		.row{
+			text-align: center;
+		}
+
+		#img{
+			border: 5px dashed black; 
+		}
+
+		#ins{
+			border: 5px dashed black;
+			background-color: lightgray;
+		}
+
+        #functions{
+            text-align: center;
+        } 
+
+        button{
+            width: 600px;
+            margin: 5px;
+			border: 3px dotted black; 
+            border-radius: 2px;
+        }
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="row ">
+			<div class="col-xl-6 "><!--img-->
+				<img src="https://images.summitmedia-digital.com/spotph/images/2021/04/28/meiji-640-1619609682.jpg" class="rounded" id="img" width="600px">
+			</div>
+
+			<div class="col-xl-6 rounded" id="ins"><!--instructions-->
+				<br>
+				<h2> lets do math problems with chocolate! </h2>
+				<br>
+				<h2> Give values: </h2>
+
+	            <form><!--values-->
+	                <input placeholder="Meiji quantity" type="text" id="x"></form><br>
+	                <input placeholder="Ferrero quantity" type="text" id="y">
+	            </form>
+	            <br><br>
+	            <h2>Now try and click the buttons bellow</h2>
+        	</div>
+  	  	</div>
+  	</div>
+
+    <div id="functions"><!--functions-->
+        <button class="btn btn-secondary" onclick="product()">product of x and y</button>
+        <button class="btn btn-secondary" onclick="exponent()">x raised to y</button><br>
+        <button class="btn btn-secondary" onclick="remainder()">get the remainder</button>
+        <button class="btn btn-secondary" onclick="equal()">check if x is equal to y</button>
+    </div>
+
+    <script>
+        function product() {
+            // calculates the product of the two values
+            let x = parseFloat(document.getElementById('x').value); 
+            let y = parseFloat(document.getElementById('y').value);
+            // multiplication formula
+            alert(x + " times " + y + " is " + (x * y));
+        }
+
+        function exponent() {
+        	// calculates the exponent of the two values
+            let x = parseFloat(document.getElementById('x').value);
+            let y = parseFloat(document.getElementById('y').value);
+            // exponent formula
+            alert(x + " raised to " + y + " is " + (x ** y));
+        }
+
+        function remainder() {
+        	// calculates the remaider of the two values
+            let x = parseFloat(document.getElementById('x').value);
+            let y = parseFloat(document.getElementById('y').value);
+
+            // notifies if the numbers doesn't create a remainder
+            alert("the remainder of " + x + " and " + y + " is " + (x % y));
+        }
+
+        function equal() {
+        	//shows if the two values are equal
+            let x = parseFloat(document.getElementById('x').value);
+            let y = parseFloat(document.getElementById('y').value);
+
+            //equal formula
+            if (x === y) {
+                alert(x + " is equal to " + y);
+            } 
+
+            //not equal formula
+            if (x !== y){
+                alert(x + " is not equal to " + y);
+            }
+        }
+    </script>
+</body>
+</html>
